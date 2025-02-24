@@ -83,37 +83,60 @@ function flormar_test_slider_shortcode($atts) {
     ob_start();
     
     if ($products->have_posts()) : ?>
-        <div class="splide">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <?php while ($products->have_posts()) : $products->the_post();
-                        global $product; ?>
-                        <li class="splide__slide">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php echo woocommerce_get_product_thumbnail(); ?>
-                                <h3><?php the_title(); ?></h3>
-                                <span class="price"><?php echo $product->get_price_html(); ?></span>
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
+        <div class="box__background">
+            <div class="box__flormar__container">
+                <div class="box__flormar">
+                    <div class="splide full-width-slider">
+                        <div class="splide__track">
+                            <div class="splide__list"> <!-- Changed from ul to div -->
+                                <?php while ($products->have_posts()) : $products->the_post();
+                                    global $product; ?>
+                                    <div class="splide__slide"> <!-- Changed from li to div -->
+                                        <div class="slide-inner">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php echo woocommerce_get_product_thumbnail(); ?>
+                                                <h3><?php the_title(); ?></h3>
+                                                <span class="price"><?php echo $product->get_price_html(); ?></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                new Splide('.splide', {
+                new Splide('.full-width-slider', {
                     perPage: 4,
-                    gap: '1rem',
+                    perMove: 1,
+                    gap: 42,
+                    type: 'loop',
+                    pagination: false,
+                    arrows: true,
+                    drag: true,
+                    snap: true,
+                    cloneStatus: true,
+                    focus: 0,
+                    trimSpace: false,
                     breakpoints: {
-                        1024: {
+                        1124: {
                             perPage: 3,
+                            gap: 42,
+                            arrows: false,
                         },
                         768: {
                             perPage: 2,
+                            gap: 32,
+                            arrows: false,
                         },
                         480: {
-                            perPage: 1,
-                        },
+                            perPage: 2,
+                            gap: 20,
+                            arrows: false,
+                        }
                     }
                 }).mount();
             });

@@ -1,8 +1,26 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 class FlormarSlider {
+    
     public function __construct() {
+        // Constructor
+    }
+
+    public function init() {
+        // Initialize plugin functionality
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_action('init', array($this, 'register_post_type'));
         add_shortcode('flormar_slider', array($this, 'render_slider'));
+    }
+
+    public function enqueue_scripts() {
+        // Enqueue Splide.js
+        wp_enqueue_style('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css');
+        wp_enqueue_script('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), '4.1.4', true);
     }
 
     public function register_post_type() {

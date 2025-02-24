@@ -51,6 +51,10 @@ Shows products with prices from 10 and up
 
 You can customize the appearance of the slider by modifying the CSS in the `assets/css/style.css` file. For JavaScript functionality, edit the `assets/js/script.js` file.
 
+![](img/1.png)
+
+![](img/2.png)
+
 ## Contributing
 
 If you would like to contribute to the Flormar Slider project, feel free to submit a pull request or open an issue on the repository.
