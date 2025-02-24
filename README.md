@@ -18,7 +18,34 @@ Flormar Slider is a customizable slider plugin for WordPress that allows you to 
 
 ## Usage
 
-After activating the plugin, you can create sliders by navigating to the Flormar Slider menu in the WordPress admin panel. Use the provided shortcode to embed sliders into your posts or pages.
+The plugin provides a simple shortcode system to display product sliders. You can use the following shortcode variations:
+
+### Basic Usage
+```
+[flormar-test-slider]
+```
+This will display all products in a slider.
+
+### Price Range Filtering
+You can filter products by price using the following parameters:
+
+1. Filter by price range:
+```
+[flormar-test-slider min-price="10" max-price="50"]
+```
+Shows products with prices between 10 and 50
+
+2. Filter by maximum price:
+```
+[flormar-test-slider max-price="50"]
+```
+Shows products with prices up to 50
+
+3. Filter by minimum price:
+```
+[flormar-test-slider min-price="10"]
+```
+Shows products with prices from 10 and up
 
 ## Customization
 
