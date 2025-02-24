@@ -1,0 +1,62 @@
+/* Flormar Slider Styles */
+
+/* Container for the slider */
+.flormar-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+/* Individual slide styles */
+.flormar-slider .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Active slide */
+.flormar-slider .slide.active {
+    display: block;
+}
+
+/* Navigation buttons */
+.flormar-slider .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Left navigation button */
+.flormar-slider .nav-button.left {
+    left: 10px;
+}
+
+/* Right navigation button */
+.flormar-slider .nav-button.right {
+    right: 10px;
+}
+
+/* Dots for navigation */
+.flormar-slider .dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.flormar-slider .dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.flormar-slider .dots .dot.active {
+    background-color: #333;
+}
